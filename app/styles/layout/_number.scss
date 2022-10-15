@@ -1,0 +1,59 @@
+.number {
+  background-color: $third-color;
+  &-list {
+    display: flex;
+  }
+  &-item {
+    width: 20%;
+    color: white;
+    padding-top: 9rem;
+    padding-bottom: 9rem;
+    border-left: 1px solid white;
+    text-align: center;
+    &:last-child {
+      border-right: 1px solid white;
+    }
+  }
+  &-item_count {
+    font-size: 72px;
+    font-family: $primary-font;
+    font-weight: bold;
+    margin-bottom: 1.5rem;
+  }
+  &-item_text {
+    font-family: $primary-font;
+    text-transform: uppercase;
+  }
+  @include maxWidth(1023px) {
+    &-item {
+      padding-top: 5rem;
+      padding-bottom: 5rem;
+    }
+    &-item_count {
+      font-size: 5rem;
+    }
+    &-item_text {
+      line-height: 1.2;
+    }
+  }
+  @include maxWidth(767px) {
+    &-list {
+      display: block;
+      padding: 2rem 0;
+    }
+    &-item {
+      width: 100%;
+      border: none;
+      padding-top: 2rem;
+      padding-bottom: 2rem;
+      border-bottom: 1px solid white;
+      &:last-child {
+        border: none;
+      }
+    }
+    &-item_count {
+      font-size: 3rem;
+      margin-bottom: 1rem;
+    }
+  }
+}

@@ -1,0 +1,100 @@
+.work {
+  padding-top: 9rem;
+  &-list {
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    grid-template-rows: 35rem 35rem;
+    grid-template-areas: 
+        "h1 h2 h5 h6"
+        "h3 h4 h5 h7";
+    .work-item1 {
+      grid-area: h1;
+    }
+    .work-item2 {
+      grid-area: h2;
+    }
+    .work-item3 {
+      grid-area: h3;
+    }
+    .work-item4 {
+      grid-area: h4;
+    }
+    .work-item5 {
+      grid-area: h5;
+    }
+    .work-item6 {
+      grid-area: h6;
+    }
+    .work-item7 {
+      grid-area: h7;
+    }
+  }
+  &-item {
+    position: relative;
+    &:hover {
+      .work-overlay {
+        opacity: 1;
+        visibility: visible;
+      }
+    }
+  }
+  &-image {
+    height: 100%;
+    object-fit: cover
+  }
+  &-overlay {
+    @include overlay();
+    background: linear-gradient(to bottom, rgba($primary-color,0.8), rgba($secondary-color,0.8));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    color: white;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity .3s linear;
+  }
+  &-title {
+    text-transform: uppercase;
+    margin: 1.5rem 0;
+  }
+  @include maxWidth(1279px) {
+    &-list {
+      grid-template-columns: repeat(2,1fr);
+      grid-template-areas: 
+          "h1 h2"
+          "h3 h4"
+          "h5 h6"
+          "h5 h7";
+    }
+    &-image {
+      width: 100%;
+    }
+  }
+  @include maxWidth(767px) {
+    padding-top: 5rem;
+    &-list {
+      grid-template-rows: 20rem 20rem;
+    }
+  }
+  @include maxWidth(374px) {
+    &-list {
+      grid-auto-columns: 80%;
+      grid-template-columns: unset;
+      grid-template-rows: unset;
+      grid-auto-flow: column;
+      grid-column-gap: 2rem;
+      overflow-x: auto;
+      scroll-snap-type: x mandatory;
+      scroll-snap-stop: always;
+      -ms-overflow-style: none;
+      scrollbar-width: none;
+      &::-webkit-scrollbar {
+        display: none;
+      }
+    }
+    &-item {
+      scroll-snap-align: start;
+    }
+  }
+}

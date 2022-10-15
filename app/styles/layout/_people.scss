@@ -1,0 +1,69 @@
+.people {
+  background: linear-gradient(to bottom, rgba(white,0.9)), url("../images/img-people-bg.png") no-repeat center/cover;
+  padding-top: 9rem;
+  padding-bottom: 11rem;
+  &-list {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 16rem 16rem;
+    grid-gap: 7.5rem;
+  }
+  &-item {
+    display: flex;
+  }
+  &-media {
+    flex-shrink: 0;
+  }
+  &-info {
+    margin-left: 3rem;
+  }
+  &-name {
+    text-transform: uppercase;
+    font-weight: 600;
+  }
+  &-title {
+    font-family: $secondary-font;
+    font-style: italic;
+    font-size: 15px;
+    display: block;
+    margin: 1.5rem 0 2rem;
+    padding-bottom: 2rem;
+    position: relative;
+    &:before {
+      content: "";
+      position: absolute;
+      left: 0;
+      transform: translateY(50%);
+      @include size(6rem, 3px);
+      background-color: $primary-color;
+      bottom: 0;
+    }
+  }
+  &-desc {
+    color: $text-color;
+    line-height: 1.4;
+  }
+  @include maxWidth(1023px) {
+    &-list {
+      display: block;
+    }
+    &-item:not(:last-child) {
+      margin-bottom: 2rem;
+    }
+    &-title {
+      margin: 1rem 0 1.5rem;
+    }
+  }
+  @include maxWidth(767px) {
+    padding-top: 5rem;
+    padding-bottom: 5rem;
+    &-desc {
+      display:-webkit-box;
+      -webkit-line-clamp: 5;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      word-break: break-word;
+    }
+  }
+}

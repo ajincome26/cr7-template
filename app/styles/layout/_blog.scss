@@ -1,0 +1,129 @@
+.blog {
+  padding-top: 9rem;
+  &-list {
+    display: flex;
+  }
+  &-item {
+    width: calc(33.33% - 2rem);
+    &:not(:first-child) {
+      margin-left: 3rem;
+    }
+  }
+  &-media {
+    position: relative;
+  }
+  &-times {
+    background-color: $third-color;
+    display: inline-block;
+    padding: 1rem 1.5rem;
+    color: white;
+    position: absolute;
+    bottom: 1rem;
+    transform: translateX(-1rem);
+  }
+  &-day {
+    font-size: 3rem;
+  }
+  &-title {
+    text-transform: uppercase;
+    font-weight: 600;
+    display: inline-block;
+    margin: 2rem 0;
+    display:-webkit-box;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    word-break: break-word;
+  }
+  &-desc {
+    font-family: $secondary-font;
+    color: $text-color;
+  }
+  &-social {
+    display: flex;
+    margin-top: 2rem;
+    padding-top: 2rem;
+    border-top: 1px solid $third-color;
+  }
+  &-social_item {  
+    &:last-child {
+      margin-left: 2rem;
+    }
+  }
+  &-icon {
+    color: $third-color;
+  }
+  &-view,
+  &-comment {
+    color: $text-color;
+    font-style: italic;
+    margin-left: 5px;
+  }
+  .map {
+    background: linear-gradient(to bottom, rgba(white,0.8)), url("../images/img-map-bg.png") no-repeat center/cover;
+    padding: 6rem 0;
+    margin-top: 11rem;
+    color: $primary-color;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    &-icon {
+      font-size: 2rem;
+    }
+    &-title {
+      font-size: 24px;
+      text-transform: uppercase;
+      font-weight: bold;
+      color: $primary-color;
+      padding: 2rem 0;
+      position: relative;
+      cursor: pointer;
+      &:before {
+        content: "";
+        position: absolute;
+        left: 50%;
+        @include size(6rem, 3px);
+        background-color: $primary-color;
+        transform: translateX(-50%);
+        bottom: 0;
+      }
+    }
+  }
+  @include maxWidth(1023px) {
+    &-desc {
+      display:-webkit-box;
+      -webkit-line-clamp: 3;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      word-break: break-word;
+    }
+  }
+  @include maxWidth(767px) {
+    padding: 5rem 0;
+    .map {
+      margin-top: 5rem;
+    }
+    &-list {
+      display: block;
+    }
+    &-item {
+      width: 100%;
+      &:not(:first-child) {
+        margin-left: 0;
+      }
+      &:not(:last-child) {
+        margin-bottom: 3rem;
+      }
+    }
+    &-title {
+      margin: 1rem 0;
+    }
+    &-social {
+      margin-top: 1rem;
+      padding-top: 1rem;
+    }
+  }
+}

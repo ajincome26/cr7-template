@@ -1,0 +1,28 @@
+header.header
+  .container
+    .header-top
+      a.header-logo(href="index.html") CR7
+      .fa.fa-bars.header-toggle
+      ul.header-menu
+        +menuLink("#","About")
+        +menuLink("#","Service")
+        +menuLink("#","Work")
+        +menuLink("#","Blog")
+        +menuLink("#","Contacts")
+        li.header-menu_item 
+          a.header-menu_icon(href="#") 
+            i.far.fa-shopping-cart
+        li.header-menu_item 
+          a.header-menu_icon(href="#") 
+            i.fa.fa-search
+    .header-content
+      h2.header-content_caption Creative Template
+      h1.header-content_main Welcome to cr7
+      a.header-content_more(href="#") Learn more
+    .header-bottom
+      .header-bottom_item.is-active
+        span.header-bottom_number 01
+        span.header-bottom_text Intro
+      +headerBottomItem("02","Work")
+      +headerBottomItem("03","About")
+      +headerBottomItem("04","Contacts")

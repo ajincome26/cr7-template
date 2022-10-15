@@ -1,0 +1,47 @@
+footer.footer 
+  .container
+    .footer-center
+      .footer-about
+        a.footer-logo(href="index.html") CR7
+        p.footer-desc Lorem aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequatLorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna.
+        .footer-folowers
+          span.footer-count 15k
+          span.footer-text folowers
+        .footer-us
+          span.footer-us_text Follow us:
+          .footer-icons
+            +footerLink("#","fab fa-facebook-f")
+            +footerLink("#","fab fa-twitter")
+            +footerLink("#","fab fa-instagram")
+            +footerLink("#","fab fa-pinterest")
+            +footerLink("#","fab fa-google")
+            +footerLink("#","fab fa-youtube")
+            +footerLink("#","fab fa-telegram")
+            +footerLink("#","fab fa-github")
+        .footer-submit
+          input.footer-input(type="mail" placeholder="Your Email")
+          span.footer-button Subscribe
+      .footer-social
+        .footer-blogs
+          .footer-header Blogs
+          .footer-list
+            +footerItem("./images/img-blogs1.png","Ut enim ad minim veniam ipsum dolor sit amet","Jan 9, 2022")
+            +footerItem("./images/img-blogs2.png","Ut enim ad minim veniam ipsum dolor sit amet","Jan 11, 2022")
+            +footerItem("./images/img-blogs3.png","Ut enim ad minim veniam ipsum dolor sit amet","Jan 14, 2022")
+        .footer-instagram
+          .footer-header Instagram
+          .footer-instagram_list
+            +footerInsItem("./images/img-instagram1.png")
+            +footerInsItem("./images/img-instagram2.png")
+            +footerInsItem("./images/img-instagram3.png")
+            +footerInsItem("./images/img-instagram4.png")
+            +footerInsItem("./images/img-instagram5.png")
+            +footerInsItem("./images/img-instagram6.png")
+            +footerInsItem("./images/img-instagram7.png")
+            +footerInsItem("./images/img-instagram8.png")
+            +footerInsItem("./images/img-instagram9.png")
+          a.footer-caption(href="#") View more photos
+    .footer-product
+      i.far.fa-copyright
+      span.footer-product_text 2022 CR7 The Best template by 
+        a.footer-product_author(href="#") Tu7egend

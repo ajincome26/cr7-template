@@ -1,0 +1,105 @@
+.team {
+  padding-top: 9rem;
+  padding-bottom: 12rem;
+  &-list {
+    display: flex;
+  }
+  &-item {
+    width: calc(33.33% - 2rem);
+  }
+  &-item:not(:first-child) {
+    margin-left: 3rem;
+  }
+  &-media {
+    position: relative;
+    transition: transform .3s linear;
+    &:before {
+      content: "";
+      @include overlay();
+      background-color: $third-color;
+      z-index: -1;
+    }
+    &:hover {
+      transform: translate(-1rem, -1rem);
+      .team-overlay {
+        opacity: 1;
+        visibility: visible;
+      }
+      &:before {
+        transform: translate(1rem, 1rem);
+        transition: transform .3s linear;
+      }
+    }
+  }
+  &-overlay {
+    @include overlay();
+    @include flexCenter();
+    background: linear-gradient(to bottom, rgba($primary-color, 0.85), rgba($secondary-color, 0.8));
+    opacity: 0;
+    visibility: hidden;
+  }
+  &-icon {
+    width: 42px;
+    color: $primary-color;
+    background-color: $secondary-color;
+    padding: 1.5rem;
+    transition: all .3s linear;
+    text-align: center;
+    &:nth-child(2) {
+      border-left: 1px solid $primary-color;
+      border-right: 1px solid $primary-color;
+    }
+    &:nth-child(3) {
+      border-right: 1px solid $primary-color;
+    }
+    &:hover {
+      color: white;
+      background-color: $primary-color;
+    }
+  }
+  &-member {
+    margin-top: 3rem;
+    text-align: center;
+  }
+  &-name {
+    display: block;
+    text-transform: uppercase;
+    font-weight: 600;
+    margin-bottom: 1rem;
+  }
+  &-jobs {
+    font-family: $secondary-font;
+    font-style: italic;
+    color: $text-color;
+  }
+  @include maxWidth(767px) {
+    padding-top: 5rem;
+    padding-bottom: 5rem;
+    &-list {
+      display: grid;
+      grid-auto-columns: 80%;
+      grid-template-columns: unset;
+      grid-auto-flow: column;
+      grid-column-gap: 2rem;
+      overflow-x: auto;
+      scroll-snap-type: x mandatory;
+      scroll-snap-stop: always;
+      -ms-overflow-style: none;
+      scrollbar-width: none;
+      &::-webkit-scrollbar {
+      display: none;
+      }
+    }
+    &-image {
+      width: 100%;
+    }
+    &-item {
+      padding: 1rem;
+      width: auto;
+      scroll-snap-align: start;
+    }
+    &-item:not(:first-child) {
+      margin-left: 0;
+    }
+  }
+}

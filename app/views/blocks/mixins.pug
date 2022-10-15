@@ -1,0 +1,132 @@
+mixin menuLink(href,title)       
+  li.header-menu_item 
+    a.header-menu_link(href= href)= title
+
+mixin headerBottomItem(number,text)
+  .header-bottom_item
+    span.header-bottom_number= number
+    span.header-bottom_text= text
+
+mixin blockHeader(caption, title, desc)
+  .block-header
+    h3.block-header_caption= caption
+    h2.block-header_title= title
+    if desc 
+      p.block-header_desc= desc
+
+mixin  aboutItem(data)
+  .about-item 
+    img.about-item_image(src= data.src)
+    .about-overlay
+      i.fa.fa-user-friends.about-icon
+      span.about-desc= data.desc
+
+mixin numberItem(count, text) 
+  li.number-item
+    h3.number-item_count= count
+    span.number-item_text= text
+
+mixin serviceItem(src, title, desc)
+  li.service-item 
+    .service-image
+      img.service-icon(src= src)
+    .service-content
+      span.service-title= title
+      span.service-desc= desc
+      
+mixin wedoItem(src, title, iconClass, desc)
+  .wedo-item
+    .wedo-item_header
+      .wedo-left
+        img.wedo-image(src= src)
+        span.wedo-title= title
+      i.wedo-icon(class= iconClass)
+    .wedo-item_box
+      .wedo-item_content
+        p.wedo-desc= desc
+
+mixin teamSocial(facebook="#",twitter="#",pinterest="#",instagram="#")
+  a.team-link(href= facebook)
+    i.fab.fa-facebook-f.team-icon
+  a.team-link(href= twitter)
+    i.fab.fa-twitter.team-icon
+  a.team-link(href= pinterest)
+    i.fab.fa-pinterest-p.team-icon
+  a.team-link(href= instagram)
+    i.fab.fa-instagram.team-icon
+
+mixin teamItem(src,name,jobs)
+  .team-item
+    .team-media
+      img.team-image(src= src)
+      .team-overlay 
+        if block
+          block
+    .team-member
+      span.team-name= name
+      span.team-jobs= jobs
+
+mixin workItem(classItem,src)
+  .work-item(class=classItem)
+    img.work-image(src=src)
+    .work-overlay 
+      img.work-icon(src="./images/img-work-icon.png")
+      span.work-title Creatively Designed
+      span.work-desc Lorem ipsum dolor sit
+
+mixin peopleItem(src,name,title,desc)
+  .people-item
+    .people-media 
+      img.people-avatar(src= src)
+    .people-info
+      h3.people-name= name
+      span.people-title= title
+      p.people-desc= desc
+
+mixin blogItem(src,day,month,title,desc,view,comment)
+  .blog-item
+    .blog-media
+      img.blog-image(src=src)
+      .blog-times
+        h2.blog-day= day
+        span.blog-month= month
+    .blog-info
+      span.blog-title= title
+      p.blog-desc= desc
+    .blog-social
+      .blog-social_item
+        i.fas.fa-eye.blog-icon
+        span.blog-view= view
+      .blog-social_item
+        i.fas.fa-comment-dots.blog-icon
+        span.blog-comment= comment
+
+mixin footerLink(href,iconClass)
+  a.footer-link(href=href)
+    i.footer-icon(class=iconClass)
+
+mixin footerItem(src,title,times)
+  .footer-item
+    .footer-media
+      img.footer-image(src=src)
+    .footer-content
+      .footer-title= title
+      .footer-times= times
+
+mixin footerInsItem(src)
+  .footer-instagram_item
+    img.footer-instagram_image(src=src)
+
+mixin quoteItem(src,text,author)
+  .quote-item
+    img.quote-image(src= src)
+    .quote-content
+      p.quote-text= text
+      span.quote-author= author
+
+mixin avatarItem(src,text=`"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."`,author="Nguyen Van Tu")
+  .avatar-item
+    img.avatar-image(src= src)
+    .avatar-content
+      p.avatar-text= text
+      span.avatar-author= author
